@@ -1,11 +1,11 @@
-const API_BASE_URL =
-  (typeof import.meta !== 'undefined' &&
-    import.meta.env &&
-    import.meta.env.VITE_API_BASE_URL) ||
-  process.env.REACT_APP_API_BASE_URL ||
-  'http://localhost:8080';
+// const API_BASE_URL =
+//   (typeof import.meta !== 'undefined' &&
+//     import.meta.env &&
+//     import.meta.env.VITE_API_BASE_URL) ||
+//   process.env.REACT_APP_API_BASE_URL ||
+//   'http://localhost:8080';
 
-// const API_BASE_URL = 'http://emissions-backend-production.up.railway.app';
+const API_BASE_URL = 'http://emissions-backend-production.up.railway.app';
 
 // Generic fetch helper
 async function request(path, options = {}) {
