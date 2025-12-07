@@ -1,70 +1,134 @@
-# Getting Started with Create React App
+# 🌍 Emissions Insight Dashboard — Frontend  
+### Stride Labs HackForward 2025 — Round 2  
+**By: Somasekhar Reddy Danda**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+## 🚀 Overview
 
-In the project directory, you can run:
+This is the **frontend** of the *Emissions Insight Dashboard* built for  
+**Stride Labs HackForward 2025 – Round 2**.
 
-### `npm start`
+The UI provides:
+- Interactive summary cards  
+- Year & sector filtering  
+- Trend charts  
+- Emissions table  
+- A responsive AI-powered chat interface  
+- Smooth, intuitive user experience  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The dashboard consumes REST APIs from the backend (Railway deployment).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## ✨ Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 📊 Dashboard
+- Summary metrics (total, highest sector, averages)
+- Year and sector filters  
+- Trend visualization using Chart.js / Recharts  
+- Emissions table  
+- Sector summary & trend summary cards  
 
-### `npm run build`
+### 🤖 Chat Assistant
+- Natural-language questions  
+- Uses backend-powered AI responses  
+- Provides quick replies  
+- Generates table/chart responses when available  
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 🎨 UI/UX
+- Clean dark theme  
+- Sidebar chat layout  
+- Responsive grid design  
+- Component-based architecture  
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🛠️ Tech Stack
 
-### `npm run eject`
+- **React (CRA)**  
+- **Recharts + Chart.js**  
+- **Custom components**  
+- **Vercel deployment**  
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🌐 Live Deployment
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Frontend URL:  
+👉 https://emissions-frontend.vercel.app
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Backend URL (API):  
+👉 https://emissions-backend-production.up.railway.app
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🧩 Project Structure
+emissions-frontend/
+│
+├── public/
+│   ├── index.html
+│   └── favicon.ico
+│
+├── src/
+│   ├── api/
+│   │   └── api.js                # All backend API calls (summary, trend, chat, sectors, years)
+│   │
+│   ├── components/
+│   │   ├── Header.jsx            # Dashboard header (title + user info area)
+│   │   ├── FiltersBar.jsx        # Dropdown filters for year + sector
+│   │   ├── SummaryCards.jsx      # Dashboard metric cards
+│   │   ├── EmissionsTable.jsx    # Data table
+│   │   ├── EmissionsCharts.jsx   # Trend charts (Recharts / Chart.js)
+│   │   ├── ChatPanel.jsx         # Full chat UI with message list + input
+│   │   ├── QuickReplies.jsx      # Auto-generated reply suggestions
+│   │   ├── TableRenderer.jsx     # Chat → table response renderer
+│   │   └── ChartRenderer.jsx     # Chat → chart response renderer
+│   │
+│   ├── pages/
+│   │   └── Dashboard.jsx         # Full layout (header + left panel + chat panel)
+│   │
+│   ├── styles/                   # Optional shared styles
+│   │   └── global.css
+│   │
+│   ├── App.js                    # Entry: routing + app-level state
+│   ├── index.js                  # React DOM rendering
+│   └── setupTests.js             # CRA test environment
+│
+├── .env                          # REACT_APP_API_BASE_URL
+├── package.json
+├── package-lock.json
+├── README.md
+└── .gitignore
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🔗 API Integration
 
-### Code Splitting
+All API calls use:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```js
+const API_BASE_URL = "https://emissions-backend-production.up.railway.app";
 
-### Analyzing the Bundle Size
+Endpoints used:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+/api/emissions/years
+/api/emissions/sectors
+/api/emissions/summary
+/api/emissions/trend
+/api/emissions/sectorSummary
+/api/emissions/trendSummary
+/api/chat
+🧪 Running Locally
+Copy code
+Bash
+npm install
+npm start
+Frontend runs at:
+Copy code
 
-### Making a Progressive Web App
+http://localhost:3000
+🗂️ Build & Deploy
+To deploy on Vercel:
+Copy code
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+npm run build
+Vercel automatically detects CRA and deploys to production.
