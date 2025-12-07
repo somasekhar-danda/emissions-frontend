@@ -5,7 +5,7 @@
 //   process.env.REACT_APP_API_BASE_URL ||
 //   'http://localhost:8080';
 
-const API_BASE_URL = 'http://emissions-backend-production.up.railway.app';
+const API_BASE_URL = 'https://emissions-backend-production.up.railway.app';
 
 // Generic fetch helper
 async function request(path, options = {}) {
